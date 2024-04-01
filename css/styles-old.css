@@ -59,20 +59,14 @@ img{
 }
 
 .header-logo{
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.17;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color:  #4d5ae5;
+
     margin-right: 76px;
     padding-top: 24px;
     padding-bottom: 24px;
 }
 
 .header-logo-part{
-    color: #2e2f42
+  
 }
 
 .header-list{
@@ -119,9 +113,7 @@ img{
 .contacts-container{
     display: flex;
     gap: 40px;
-   
-  
-}  
+   }  
 
 .contacts-link:hover{
     color: #404bbf;  
