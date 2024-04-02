@@ -367,6 +367,7 @@ img {
   }
   .contacts-container {
     display: flex;
+    gap: 40px;
   }
   .contacts {
     font-style: normal;
