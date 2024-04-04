@@ -105,6 +105,7 @@ img {
 }
 
 .header-logo {
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
@@ -128,7 +129,7 @@ img {
 }
 
 .menu-modal-windows {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: #fff;
@@ -136,11 +137,10 @@ img {
   height: 100%;
   padding: 24px;
   transform: translateY(-100%); 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms transform 250ms cubic-bezier(0.4, 0, 0.2, 1) visibility 250ms;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
  
 }
@@ -149,7 +149,7 @@ img {
     visibility: hidden; 
 }
 .modal-close-mob {
-  position: absolute;
+  position: fixed;
   top: 24px;
   right: 24px;
   display: flex;
@@ -166,10 +166,15 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-menu-container{
+  padding-top: 72px;
+  padding-left: 16px;
+  padding-right: 24px;
+  padding-bottom: 40px;
+}
+
 
 .mob-list {
-  margin-bottom: 168px;
-  padding-top: 72px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -179,7 +184,7 @@ img {
 }
 
 .nav-mob-menu {
-  margin-bottom: auto;
+  margin-bottom: 168px;
 }
 
 .mob-link-title {
@@ -203,7 +208,7 @@ img {
   position: relative;
   color: #404bbf;
 }
-.contacts-container-mob {
+.contacts-mob{
   margin-bottom: 48px;
 }
 .contacts-item-mob:nth-child(1) .contacts-link-mob {
@@ -234,9 +239,7 @@ img {
 }
 .mob-list-social {
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 40px;
+  gap: 40px;
 }
 .mob-link-icons {
   width: 100%;
@@ -292,8 +295,10 @@ img {
   }
 
   .header-navigation {
-    justify-content: space-between;
     display: flex;
+    justify-content: space-between;
+    text-align: center;
+  
   }
   .header-list {
     font-weight: 500;
@@ -336,9 +341,10 @@ img {
   }
   .contacts-link {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    display: block;
     padding-top: 6px;
     padding-bottom: 6px;
 
@@ -359,7 +365,6 @@ img {
   .header-logo {
     font-weight: 700;
     margin-right: 76px;
-    padding-left: 156px;
   }
   .header-link-title {
     display: block;
@@ -373,6 +378,10 @@ img {
     font-style: normal;
   }
   .contacts-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     display: block;
   }
 }
@@ -381,7 +390,7 @@ img {
 
 .hero {
   padding: 72px 0;
-  background: #2e2f42;
+  background-color: #2e2f42;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
@@ -446,7 +455,6 @@ img {
 @media screen and (min-width: 768px) {
   .hero {
     padding: 112px 0;
-    background: #2e2f42;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -479,13 +487,13 @@ img {
   .hero {
     padding-top: 188px;
     padding-bottom: 188px;
-    background: #2e2f42;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/desktop-hero.jpg);
     max-width: 1440px;
+    background-position: center;
   }
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
@@ -606,6 +614,9 @@ img {
   flex-wrap: wrap;
   gap: 72px;
 }
+.wraper-team{
+  padding: 32px 0 32px;
+}
 .team-item {
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -646,7 +657,6 @@ img {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  padding-bottom: 32px;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -746,6 +756,7 @@ img {
 .portfolio-container-wrap {
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .portfolio-cover-text {
   position: absolute;
@@ -796,7 +807,7 @@ img {
 /* footer*/
 
 .footer {
-  padding: 96px 16px;
+  padding: 96px 0px;
   background: #2e2f42;
 }
 .container-footer-wrap {
@@ -831,9 +842,10 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 288px;
-  padding: 0 16px 0 16px;
 }
-
+.footer-social-container{
+  margin-bottom: 72px;
+}
 .footer-social-media {
   font-weight: 500;
   font-size: 16px;
@@ -850,7 +862,6 @@ img {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 72px;
 }
 .footer-link-icons {
   width: 100%;
@@ -880,6 +891,10 @@ img {
   align-items: center;
   gap: 16px;
 }
+.subscribe-form-label{
+  display: block;
+  margin-bottom: 16px;
+}
 
 .footer-subscribe-title {
   font-weight: 500;
@@ -902,7 +917,6 @@ img {
   letter-spacing: 0.04em;
   padding-left: 16px;
   color: #ffffff;
-  margin-bottom: 16px;
 }
 .subscribe-form-input::placeholder {
   color: #fff;
@@ -949,14 +963,17 @@ img {
   .footer-text {
     max-width: 264px;
     text-align: start;
-    margin-bottom: 72px;
     padding: 0;
+  }
+  .footer-social-media{
+    text-align: start;
   }
   .container-footer-wrap {
     flex-direction: row;
     justify-content: start;
     align-items: baseline;
     column-gap: 24px;
+    row-gap: 72px;
     padding-left: 108px;
   }
 
@@ -965,6 +982,9 @@ img {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+  .subscribe-form-input{
+    width: 264px;
   }
   .footer-subscribe-title {
     text-align: start;
@@ -976,14 +996,19 @@ img {
 }
 
 @media screen and (min-width: 1158px) {
-  .footer {
-  }
+ 
   .container-footer-wrap {
-    justify-content: space-between;
     padding-left: 16px;
     gap: 0px;
     height: 112px;
   }
+  .footer-container-logo{
+    margin-right: 120px;
+  }
+  .footer-social-container{
+    margin: 0 auto;
+  }
+
 }
 
 /* backdrop*/
@@ -1008,10 +1033,10 @@ img {
     max-width: 408px;
     width: calc(100% - 32px);
     border-radius: 4px;
-    padding: 72px 24px 24px;
+    padding: 72px 16px 16px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: #fcfcfc;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-open {
@@ -1186,6 +1211,7 @@ img {
   margin-right: 8px;
   fill: transparent;
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1215,4 +1241,9 @@ img {
   border: none;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1158px){
+  .modal{
+    padding: 72px 24px 24px;
+  }
 }
